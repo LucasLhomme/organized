@@ -10,7 +10,7 @@
 char *my_strdup(char const *src)
 {
     char *name;
-    
+
     name = malloc(strlen(src) + 1);
     if (name == NULL)
         return NULL;
