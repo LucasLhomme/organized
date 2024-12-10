@@ -62,7 +62,7 @@ all: 	$(NAME)
 
 $(NAME):	$(OBJ) $(OBJ_LIB)
 		ar rcs $(NAME) $(OBJ)  $(OBJ_LIB)
-		gcc -o organized lib $(CFLAGS)
+		gcc -o organized libfile $(CFLAGS)
 
 clean:
 		rm -f $(OBJ) $(OBJ_LIB)
