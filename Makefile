@@ -7,7 +7,7 @@
 
 pathdir=./src/lib
 
-NAME = lib
+NAME = libfile
 
 CFLAGS += -g -Wall -Wextra -W -L./ -lshell -Iinclude -Ilibshell
 
