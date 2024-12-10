@@ -25,6 +25,7 @@ LIB =	$(pathdir)/check_strisnum.c\
 	$(pathdir)/my_putstr.c\
 	$(pathdir)/my_revstr.c\
 	$(pathdir)/my_showmem.c\
+	$(pathdir)/my_strdup.c\
 	$(pathdir)/my_sort_int_array.c\
 	$(pathdir)/my_str_isalpha.c\
 	$(pathdir)/my_str_islower.c\

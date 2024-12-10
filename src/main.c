@@ -19,10 +19,11 @@ int add(void *data, char **args)
     static int id = 0;
 
     new_node->next = linked;
-    new_node->type = args[0];
+    new_node->type = my_strdup(args[0]);
     new_node->id = id;
-    new_node->name = args[1];
+    new_node->name = my_strdup(args[1]);
     id++;
+    *((linked_list_t **)data) = new_node;
     my_printf("%s n°%i - ""%s""\n", args[0], id, args[1]);
     return 0;
 }
@@ -36,8 +37,15 @@ int del(void *data, char **args)
 
 int disp(void *data, char **args)
 {
-    (void)data;
-    (void)args;
+    linked_list_t *linked = *((linked_list_t **)data);
+
+    if (linked == NULL)
+        my_printf("Y a rien\n");
+    while (linked != NULL) {
+        my_printf("%s n°%i - ""%s""\n", linked->type,
+        linked->id, linked->name);
+        linked = linked->next;
+    }
     return 0;
 }
 

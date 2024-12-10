@@ -44,6 +44,7 @@ int my_showstr(char const *str);
 int my_showmem(char const *str, int size);
 char *my_strcat(char *dest, char const *src);
 char *my_strncat(char *dest, char const *src, int nb);
+char *my_strdup(char const *src);
 void my_putchar(char c);
 int my_printf(const char *format, ...);
 void flag_o(va_list list);
