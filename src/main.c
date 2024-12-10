@@ -43,7 +43,7 @@ int disp(void *data, char **args)
         my_printf("Y a rien\n");
     while (linked != NULL) {
         my_printf("%s n°%i - ""%s""\n", linked->type,
-        linked->id, linked->name);
+        linked->id+1, linked->name);
         linked = linked->next;
     }
     return 0;
