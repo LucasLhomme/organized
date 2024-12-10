@@ -9,9 +9,10 @@ pathdir=./src/lib
 
 NAME = lib
 
-SRC = 
+CFLAGS += -g -Wall -Wextra -W -L./ -lshell -Iinclude -Ilibshell
 
-CFLAGS += -g -Wall -Werror -Wextra -W -Iinclude
+SRC = ./src/main.c\
+
 
 LIB =	$(pathdir)/check_strisnum.c\
 	$(pathdir)/my_compute_power_rec.c\
@@ -60,7 +61,7 @@ all: 	$(NAME)
 
 $(NAME):	$(OBJ) $(OBJ_LIB)
 		ar rcs $(NAME) $(OBJ)  $(OBJ_LIB)
-		gcc -o my_top main.c -Iinclude -lncurses lib
+		gcc -o organized lib $(CFLAGS)
 
 clean:
 		rm -f $(OBJ) $(OBJ_LIB)
@@ -71,6 +72,3 @@ fclean:
 re:
 		$(MAKE) fclean
 		$(MAKE) all
-debug:
-		$(MAKE) clean
-		gcc -g main.c -Iinclude lib

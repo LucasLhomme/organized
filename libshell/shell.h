@@ -17,4 +17,12 @@ int disp(void *data, char **args);
 // Already implemented
 int workshop_shell(void *data);
 
+// I Create
+typedef struct linked_list_s {
+    char *type;
+    int id;
+    char *name;
+    struct linked_list_s *next;
+} linked_list_t;
+
 #endif /* SHELL_H */
