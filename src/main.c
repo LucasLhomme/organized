@@ -34,7 +34,7 @@ int multiple_add(void *data, char *args, char *args_bis)
     new_node->id = id;
     new_node->name = my_strdup(args_bis);
     *((linked_list_t **)data) = new_node;
-    my_printf("%s" "n°%i" - "%s""\n", new_node->type, id, new_node->name);
+    my_printf("%s n°%i - \"%s\" added.\n", new_node->type, id, new_node->name);
     id++;
     return 0;
 }
@@ -54,20 +54,20 @@ int disp(void *data, char **args)
     if (linked == NULL)
         my_printf("Y a rien\n");
     while (linked != NULL) {
-        my_printf("%s n°%i - ""%s""\n", linked->type,
+        my_printf("%s n°%i - \"%s\"\n", linked->type,
         linked->id, linked->name);
         linked = linked->next;
     }
     return 0;
 }
 
-/*int sort(void *data, char **args)
+int sort(void *data, char **args)
 {
     (void)data;
     (void)args;
     return 0;
 }
-*/
+
 //free toute la liste ici
 int main(void)
 {
