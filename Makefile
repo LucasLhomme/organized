@@ -13,6 +13,8 @@ CFLAGS += -g -Wall -Wextra -W -L./ -lshell -Iinclude
 
 SRC = ./src/main.c\
 	./src/add_function.c\
+	./src/del_function.c\
+	./src/free_list.c\
 
 
 LIB =	$(pathdir)/check_strisnum.c\

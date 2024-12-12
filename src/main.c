@@ -22,21 +22,12 @@ int add(void *data, char **args)
 //free quand je delete
 int del(void *data, char **args)
 {
-    linked_list_t *linked = *((linked_list_t **)data);
-    linked_list_t *curr = linked;
-    linked_list_t *rm = curr->next;
+    int j = 0;
 
-    if (linked == NULL) {
-        my_printf("Y a rien\n");
-        return 0;
+    while (args[j] != NULL) {
+        del_node(data, args[j]);
+        j++;
     }
-    for (linked_list_t *curr = linked; curr->next != NULL; curr = curr->next) {
-        if (curr->next->id == my_getnbr(args[0])) {
-            curr->next = curr->next->next;
-            free(rm);
-        }
-    }
-    (void)args;
     return 0;
 }
 
@@ -61,11 +52,11 @@ int sort(void *data, char **args)
     return 0;
 }
 
-//free toute la liste ici
 int main(void)
 {
     linked_list_t *linked = NULL;
 
     workshop_shell(&linked);
+    free_list(linked);
     return 0;
 }
