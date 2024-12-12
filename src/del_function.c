@@ -18,9 +18,7 @@ int del_first_node(void *data)
         return 0;
     }
     *linked = head->next;
-    free(head->type);
-    free(head->name);
-    free(head);
+    free_list_del(head);
 }
 
 int del_last_node(void *data, char *arg)
@@ -32,9 +30,7 @@ int del_last_node(void *data, char *arg)
 
     while (curr != NULL) {
         if (curr->id == id_to_delete) {
-            free(curr->name);
-            free(curr->type);
-            free(curr);
+            free_list_del(curr);
         }
         prev = curr;
         curr = curr->next;
@@ -61,6 +57,7 @@ int del_node(void *data, char *arg)
         if (prev != NULL) {
             prev->next = curr->next;
         }
+        free_list_del(curr);
     }
     return 0;
 }

@@ -68,4 +68,5 @@ typedef struct linked_list_s {
     struct linked_list_s *next;
 } linked_list_t;
 void free_list(linked_list_t *linked);
+void free_list_del(linked_list_t *linked);
 #endif /*my.h*/

@@ -20,3 +20,15 @@ void free_list(linked_list_t *linked)
         free(tmp);
     }
 }
+
+void free_list_del(linked_list_t *linked)
+{
+    if(linked != NULL) {
+        free(linked->type);
+        free(linked->name);
+        free(linked);
+    }
+
+
+
+}
