@@ -12,6 +12,7 @@
 #include <string.h>
 #include <dirent.h>
 #include <time.h>
+#include "shell.h"
 
 #ifndef MY_H
     #define MY_H
@@ -57,4 +58,12 @@ void flag_x2(va_list list);
 void flag_x(va_list list);
 void blank(va_list list);
 int flag_detector(const char *format, int i, va_list list);
+int multiple_add(void *data, char *args, char *args_bis);
+// I Create
+typedef struct linked_list_s {
+    char *type;
+    int id;
+    char *name;
+    struct linked_list_s *next;
+} linked_list_t;
 #endif /*my.h*/

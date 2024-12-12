@@ -9,9 +9,10 @@ pathdir=./src/lib
 
 NAME = libfile
 
-CFLAGS += -g -Wall -Wextra -W -L./ -lshell -Iinclude -Ilibshell
+CFLAGS += -g -Wall -Wextra -W -L./ -lshell -Iinclude
 
 SRC = ./src/main.c\
+	./src/add_function.c\
 
 
 LIB =	$(pathdir)/check_strisnum.c\

@@ -7,9 +7,6 @@
 
 #include "shell.h"
 #include "my.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int add(void *data, char **args)
 {
@@ -22,27 +19,23 @@ int add(void *data, char **args)
     return 0;
 }
 
-int multiple_add(void *data, char *args, char *args_bis)
-{
-    linked_list_t *linked = *((linked_list_t **)data);
-    linked_list_t *new_node = malloc(sizeof(linked_list_t));
-    linked_list_t **dat = &new_node;
-    static int id = 0;
-
-    new_node->next = linked;
-    new_node->type = my_strdup(args);
-    new_node->id = id;
-    new_node->name = my_strdup(args_bis);
-    *((linked_list_t **)data) = new_node;
-    my_printf("%s n°%i - \"%s\" added.\n", new_node->type, id, new_node->name);
-    id++;
-    return 0;
-}
-
 //free quand je delete
 int del(void *data, char **args)
 {
-    (void)data;
+    linked_list_t *linked = *((linked_list_t **)data);
+    linked_list_t *curr = linked;
+    linked_list_t *rm = curr->next;
+
+    if (linked == NULL) {
+        my_printf("Y a rien\n");
+        return 0;
+    }
+    for (linked_list_t *curr = linked; curr->next != NULL; curr = curr->next) {
+        if (curr->next->id == my_getnbr(args[0])) {
+            curr->next = curr->next->next;
+            free(rm);
+        }
+    }
     (void)args;
     return 0;
 }
