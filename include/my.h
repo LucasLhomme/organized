@@ -60,7 +60,6 @@ void blank(va_list list);
 int flag_detector(const char *format, int i, va_list list);
 int multiple_add(void *data, char *args, char *args_bis);
 int del_node(void *data, char *arg);
-int del_last_node(void *data, char *arg);
 // I Create
 typedef struct linked_list_s {
     char *type;

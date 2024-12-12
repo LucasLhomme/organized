@@ -25,7 +25,7 @@ int del(void *data, char **args)
     int j = 0;
 
     while (args[j] != NULL) {
-        del_node(data, args[j]);
+            del_node(data, args[j]);
         j++;
     }
     return 0;
@@ -42,6 +42,7 @@ int disp(void *data, char **args)
         linked->id, linked->name);
         linked = linked->next;
     }
+    (void)args;
     return 0;
 }
 

@@ -19,5 +19,4 @@ void free_list(linked_list_t *linked)
         free(tmp->name);
         free(tmp);
     }
-    return 0;
 }
