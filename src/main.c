@@ -12,7 +12,7 @@ int add(void *data, char **args)
 {
     int j = 0;
 
-    while (args[j] != NULL) {
+    while (args[j] != NULL && args[j + 1] != NULL) {
         multiple_add(data, args[j], args[j + 1]);
         j = j + 2;
     }

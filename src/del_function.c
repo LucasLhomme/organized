@@ -54,11 +54,10 @@ int del_node(void *data, char *arg)
         prev = curr;
         curr = curr->next;
     }
-    if (curr != NULL) {
-        if (prev != NULL) {
-            prev->next = curr->next;
-        }
-        my_printf("%s n°%i - \"%s\" deleted.\n", curr->type, curr->id, curr->name);
+    if (curr != NULL && prev != NULL) {
+        prev->next = curr->next;
+        my_printf("%s n°%i - \"%s\" deleted.\n",
+        curr->type, curr->id, curr->name);
         free_list_del(curr);
     }
     return 0;

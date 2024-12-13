@@ -23,12 +23,9 @@ void free_list(linked_list_t *linked)
 
 void free_list_del(linked_list_t *linked)
 {
-    if(linked != NULL) {
+    if (linked != NULL) {
         free(linked->type);
         free(linked->name);
         free(linked);
     }
-
-
-
 }

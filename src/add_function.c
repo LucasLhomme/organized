@@ -16,6 +16,10 @@ int multiple_add(void *data, char *args, char *args_bis)
     linked_list_t **dat = &new_node;
     static int id = 0;
 
+    if (args == NULL || args_bis == NULL) {
+        free(new_node);
+        return 84;
+    }
     new_node->next = linked;
     new_node->type = my_strdup(args);
     new_node->id = id;
