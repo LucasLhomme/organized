@@ -28,14 +28,12 @@ int del_last_node(void *data, char *arg)
 {
     linked_list_t *linked = *((linked_list_t **)data);
     linked_list_t *curr = linked;
-    linked_list_t *prev = NULL;
     int id_to_delete = my_getnbr(arg);
 
     while (curr != NULL) {
         if (curr->id == id_to_delete) {
             free_list_del(curr);
         }
-        prev = curr;
         curr = curr->next;
         my_printf("%s n°%i - \"%s\" deleted.\n",
         curr->type, curr->id, curr->name);
@@ -51,6 +49,18 @@ void delete_node(linked_list_t *prev, linked_list_t *curr)
     my_printf("%s n°%i - \"%s\" deleted.\n",
     curr->type, curr->id, curr->name);
     free_list_del(curr);
+}
+
+int id_exists(linked_list_t *linked, int id_to_check)
+{
+    linked_list_t *curr = linked;
+
+    while (curr != NULL) {
+        if (curr->id == id_to_check)
+            return 1;
+        curr = curr->next;
+    }
+    return 0;
 }
 
 int del_node(void *data, char *arg)
@@ -75,16 +85,4 @@ int del_node(void *data, char *arg)
         return 0;
     }
     return 84;
-}
-
-int id_exists(linked_list_t *linked, int id_to_check)
-{
-    linked_list_t *curr = linked;
-
-    while (curr != NULL) {
-        if (curr->id == id_to_check)
-            return 1;
-        curr = curr->next;
-    }
-    return 0;
 }
