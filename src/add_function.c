@@ -45,4 +45,3 @@ int multiple_add(void *data, char *args, char *args_bis)
     }
     return 0;
 }
-

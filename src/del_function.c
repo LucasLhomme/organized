@@ -43,6 +43,16 @@ int del_last_node(void *data, char *arg)
     return 0;
 }
 
+void delete_node(linked_list_t *prev, linked_list_t *curr)
+{
+    if (prev != NULL) {
+        prev->next = curr->next;
+    }
+    my_printf("%s n°%i - \"%s\" deleted.\n",
+    curr->type, curr->id, curr->name);
+    free_list_del(curr);
+}
+
 int del_node(void *data, char *arg)
 {
     linked_list_t **linked = (linked_list_t **)data;
@@ -52,17 +62,29 @@ int del_node(void *data, char *arg)
 
     if (curr == NULL)
         return 84;
+    if (!id_exists(curr, id_to_delete))
+        return 84;
     if (curr->id == id_to_delete)
         return del_first_node(data);
     while (curr != NULL && curr->id != id_to_delete) {
         prev = curr;
         curr = curr->next;
     }
-    if (curr != NULL && prev != NULL) {
-        prev->next = curr->next;
-        my_printf("%s n°%i - \"%s\" deleted.\n",
-        curr->type, curr->id, curr->name);
-        free_list_del(curr);
+    if (curr != NULL) {
+        delete_node(prev, curr);
+        return 0;
+    }
+    return 84;
+}
+
+int id_exists(linked_list_t *linked, int id_to_check)
+{
+    linked_list_t *curr = linked;
+
+    while (curr != NULL) {
+        if (curr->id == id_to_check)
+            return 1;
+        curr = curr->next;
     }
     return 0;
 }
