@@ -12,18 +12,21 @@ int add(void *data, char **args)
 {
     int j = 0;
 
+    if (args[0] == NULL || args[1] == NULL) {
+        return 84;
+    }
     while (args[j] != NULL && args[j + 1] != NULL) {
-        multiple_add(data, args[j], args[j + 1]);
+        if (multiple_add(data, args[j], args[j + 1]) != 0)
+            return 84;
         j = j + 2;
     }
     return 0;
 }
-
 //free quand je delete
 int del(void *data, char **args)
 {
     int j = 0;
-
+  
     while (args[j] != NULL) {
             del_node(data, args[j]);
         j++;
@@ -35,8 +38,6 @@ int disp(void *data, char **args)
 {
     linked_list_t *linked = *((linked_list_t **)data);
 
-    if (linked == NULL)
-        my_printf("Y a rien\n");
     while (linked != NULL) {
         my_printf("%s n°%i - \"%s\"\n", linked->type,
         linked->id, linked->name);
@@ -50,7 +51,7 @@ int sort(void *data, char **args)
 {
     (void)data;
     (void)args;
-    return 0;
+    return 84;
 }
 
 int main(void)
