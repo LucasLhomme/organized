@@ -8,6 +8,21 @@
 #include "shell.h"
 #include "my.h"
 
+int find_type(char *args)
+{
+    if (my_strcmp(args, "WIRE") == 0)
+        return 1;
+    if (my_strcmp(args, "ACTUATOR") == 0)
+        return 1;
+    if (my_strcmp(args, "DEVICE") == 0)
+        return 1;
+    if (my_strcmp(args, "SENSOR") == 0)
+        return 1;
+    if (my_strcmp(args, "PROCESSOR") == 0)
+        return 1;
+    return 0;
+}
+
 int multiple_add(void *data, char *args, char *args_bis)
 {
     linked_list_t *linked = *((linked_list_t **)data);
@@ -31,17 +46,3 @@ int multiple_add(void *data, char *args, char *args_bis)
     return 0;
 }
 
-int find_type(char *args)
-{
-    if (my_strcmp(args, "WIRE") == 0)
-        return 1;
-    if (my_strcmp(args, "ACTUATOR") == 0)
-        return 1;
-    if (my_strcmp(args, "DEVICE") == 0)
-        return 1;
-    if (my_strcmp(args, "SENSOR") == 0)
-        return 1;
-    if (my_strcmp(args, "PROCESSOR") == 0)
-        return 1;
-    return 0;
-}
