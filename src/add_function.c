@@ -22,9 +22,10 @@ int multiple_add(void *data, char *args, char *args_bis)
         new_node->id = id;
         new_node->name = my_strdup(args_bis);
         *((linked_list_t **)data) = new_node;
-        my_printf("%s n°%i - \"%s\" added.\n", new_node->type, id, new_node->name);
+        my_printf("%s n°%i - \"%s\" added.\n",
+        new_node->type, id, new_node->name);
         id++;
-    } else{
+    } else {
         return 84;
     }
     return 0;

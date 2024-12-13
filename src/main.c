@@ -22,11 +22,12 @@ int add(void *data, char **args)
     }
     return 0;
 }
+
 //free quand je delete
 int del(void *data, char **args)
 {
     int j = 0;
-  
+
     while (args[j] != NULL) {
             del_node(data, args[j]);
         j++;
