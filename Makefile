@@ -15,6 +15,7 @@ SRC = ./src/main.c\
 	./src/add_function.c\
 	./src/del_function.c\
 	./src/free_list.c\
+	./src/sort.c\
 
 
 LIB =	$(pathdir)/check_strisnum.c\
