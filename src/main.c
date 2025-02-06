@@ -41,7 +41,7 @@ int sort(void *data, char **args)
     int j = 0;
 
     (void)data;
-    while(args[j] != NULL) {
+    while (args[j] != NULL) {
         if (check_sorting(args[j]) == 1) {
             my_printf("Check passed: %s\n", args[j]);
         j++;
@@ -51,6 +51,7 @@ int sort(void *data, char **args)
     }
     return 0;
 }
+
 int disp(void *data, char **args)
 {
     linked_list_t *linked = *((linked_list_t **)data);
@@ -67,7 +68,6 @@ int disp(void *data, char **args)
     (void)args;
     return 0;
 }
-
 
 int main(void)
 {
