@@ -34,7 +34,7 @@ int my_printf(const char *format, ...)
             i++;
             flag_detector(format, i, list);
         } else
-            my_putchar(format[i]);
+            write(1, &format[i], 1);
     }
     va_end(list);
     return 0;

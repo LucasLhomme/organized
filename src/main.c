@@ -43,7 +43,7 @@ int sort(void *data, char **args)
     (void)data;
     while(args[j] != NULL) {
         if (check_sorting(args[j]) == 1) {
-            printf("Check passed: %s\n", args[j]);
+            my_printf("Check passed: %s\n", args[j]);
         j++;
         } else {
             return 84;
