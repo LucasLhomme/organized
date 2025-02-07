@@ -27,6 +27,9 @@ int del(void *data, char **args)
 {
     int j = 0;
 
+    if (args[0] == NULL || args[1] == NULL) {
+        return 84;
+    }
     while (args[j] != NULL) {
         if (del_node(data, args[j]) == 84) {
             return 84;
