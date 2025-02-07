@@ -21,10 +21,14 @@ int check_sorting(char *args)
 
 void swap(void *data, char **args)
 {
-    check_sorting(args);
+    (void)data;
+    (void)args;
 }
 
 int bubble_sort_id(linked_list_t *head, void *data, char **args)
 {
+    (void)data;
+    (void)head;
+    (void)args;
     return 0;
 }
