@@ -4,6 +4,7 @@
 [![Build: Make](https://img.shields.io/badge/Build-Makefile-orange.svg)](Makefile)
 [![Module: B-CPE-110](https://img.shields.io/badge/Epitech-B--CPE--110-blue.svg)](https://www.epitech.eu/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Academic Year: 2024-2025](https://img.shields.io/badge/Academic%20Year-2024--2025%20(Tek1)-blueviolet.svg)](#)
 
 > **Organized is an interactive workshop inventory management CLI**, implementing doubly linked list data structures with dynamic sorting and filtering.
 
